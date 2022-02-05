@@ -9,7 +9,6 @@ export interface Note {
   createdAt: Date;
   updatedAt: Date;
 }
-type CreateNoteParams = Pick<Note, 'title' | 'content'>;
 
 type NotesProviderProps = {
   children: ReactNode;
@@ -17,19 +16,19 @@ type NotesProviderProps = {
 
 export type NotesData = {
   items: Note[];
-  create: (params: CreateNoteParams) => Note;
+  create: () => Note;
 };
 export const NotesContext = createContext<NotesData>({} as NotesData);
 
 export function NotesProvider({ children }: NotesProviderProps) {
   const [notes, setNotes] = usePersistedState<Note[]>('notes', []);
 
-  function create({ title, content }: CreateNoteParams): Note {
+  function create(): Note {
     const dateNow = new Date();
     const note: Note = {
       id: uuidv4(),
-      title,
-      content,
+      title: 'Untitled',
+      content: '',
       createdAt: dateNow,
       updatedAt: dateNow,
     };

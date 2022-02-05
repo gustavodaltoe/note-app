@@ -5,11 +5,6 @@ export const Wrapper = styled('div', {
   minHeight: '100vh',
 });
 
-export const Sidebar = styled('div', {
-  width: '30rem',
-  borderRight: '1px solid $contrastPrimary',
-});
-
 export const Content = styled('div', {
   display: 'flex',
   flexDirection: 'column',

@@ -1,17 +1,11 @@
-import { useNotes } from '../../hooks/useNotes';
-import { CreateNote } from './CreateNote';
 import * as S from './styles';
+import { CreateNote } from './CreateNote';
+import { Sidebar } from './Sidebar';
 
 export function Home() {
-  const notes = useNotes();
-
   return (
     <S.Wrapper>
-      <S.Sidebar>
-        {notes.items.map((note) => (
-          <p key={note.id}>{note.title}</p>
-        ))}
-      </S.Sidebar>
+      <Sidebar />
       <S.Content>
         <S.Title>Notes App</S.Title>
         <CreateNote />

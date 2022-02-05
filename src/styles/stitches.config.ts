@@ -22,6 +22,6 @@ export const {
   },
   utils: {
     marginX: (value: any) => ({ marginLeft: value, marginRight: value }),
-    marginY: (value: any) => ({ marginTop: value, marginRight: value }),
+    marginY: (value: any) => ({ marginTop: value, marginBottom: value }),
   },
 });
