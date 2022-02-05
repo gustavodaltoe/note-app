@@ -10,18 +10,23 @@ export function EditNote() {
     return <CreateNote />;
   }
 
-  console.log(current);
-
   return (
-    <>
+    <S.Wrapper>
       <S.TitleInput
-        type="text"
-        name="title"
-        onChange={(val) => {
-          notes.update({ ...current, title: val.target.value });
-        }}
         value={current.title}
+        onChange={(e) => {
+          e.target.value = e.target.value.replace(/\n/g, '');
+          const value = e.target.value;
+          notes.update({ ...current, title: value });
+        }}
       />
-    </>
+      <S.ContentInput
+        onChange={(e) => {
+          notes.update({ ...current, content: e.target.value });
+        }}
+        placeholder="Start typing..."
+        value={current.content}
+      />
+    </S.Wrapper>
   );
 }
