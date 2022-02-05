@@ -21,13 +21,14 @@ const globalStyles = globalCss({
   },
   body: {
     transition: 'background-color 0.25s ease 0s',
-    background: '#E5E5E5',
+    background: '$primary',
   },
   'ul, ol': {
     listStyle: 'none',
   },
   'body, input, textarea, button': {
     font: "400 1.6rem 'Roboto', sans-serif",
+    color: '$contrastPrimary',
   },
   button: {
     cursor: 'pointer',
