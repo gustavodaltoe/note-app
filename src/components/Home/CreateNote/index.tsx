@@ -5,10 +5,7 @@ export function CreateNote() {
   const notes = useNotes();
 
   function handleCreateNoteClick() {
-    notes.create({
-      title: 'Edit me',
-      content: '',
-    });
+    notes.create();
   }
 
   return (

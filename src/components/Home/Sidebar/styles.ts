@@ -25,6 +25,14 @@ export const NoteItem = styled('button', {
   background: 'transparent',
 });
 
+export const NewNoteButton = styled(NoteItem, {
+  width: 'fit-content',
+  borderRadius: '.4rem',
+  padding: '0 2rem',
+  margin: 'auto',
+  background: '$secondary',
+});
+
 export const Separator = styled(SeparatorPrimitive.Root, {
   backgroundColor: 'rgba(255, 255, 255, 0.3)',
   '&[data-orientation=horizontal]': { height: 1, width: '80%', margin: 'auto' },
