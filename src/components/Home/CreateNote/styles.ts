@@ -9,6 +9,12 @@ export const Wrapper = styled('div', {
   alignItems: 'center',
 });
 
+export const Title = styled('h1', {
+  textAlign: 'center',
+  fontSize: '4rem',
+  marginTop: '2rem',
+});
+
 export const Button = styled('button', {
   width: '20rem',
   height: '4.8rem',

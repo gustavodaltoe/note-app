@@ -14,9 +14,3 @@ export const Content = styled('div', {
   margin: 'auto',
   minHeight: '100vh',
 });
-
-export const Title = styled('h1', {
-  textAlign: 'center',
-  fontSize: '4rem',
-  marginTop: '2rem',
-});

@@ -1,14 +1,13 @@
 import * as S from './styles';
-import { CreateNote } from './CreateNote';
 import { Sidebar } from './Sidebar';
+import { EditNote } from './EditNote';
 
 export function Home() {
   return (
     <S.Wrapper>
       <Sidebar />
       <S.Content>
-        <S.Title>Notes App</S.Title>
-        <CreateNote />
+        <EditNote />
       </S.Content>
     </S.Wrapper>
   );
