@@ -1,6 +1,14 @@
 import { globalCss } from './stitches.config';
 
 const globalStyles = globalCss({
+  ':root': {
+    fontSize: '62.5%',
+  },
+  '@media(max-width: 640px)': {
+    ':root': {
+      fontSize: '50%',
+    },
+  },
   '*': {
     margin: 0,
     padding: 0,
