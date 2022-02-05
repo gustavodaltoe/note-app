@@ -18,6 +18,7 @@ export type NotesData = {
   items: Note[];
   current?: Note;
   create: () => Note;
+  update: (note: Partial<Note>) => void;
   navigate: (id: string) => void;
 };
 export const NotesContext = createContext<NotesData>({} as NotesData);
@@ -46,8 +47,28 @@ export function NotesProvider({ children }: NotesProviderProps) {
     setCurrent(note);
   }
 
+  function update(note: Partial<Note>): void {
+    const now = new Date();
+    setCurrent((prevCurrent) => {
+      if (!prevCurrent) return;
+      const updatedNote = {
+        ...prevCurrent,
+        ...note,
+        updatedAt: now,
+      };
+      setNotes((prevNotes) => {
+        return prevNotes.map((prevNote) =>
+          prevNote.id === prevCurrent.id ? updatedNote : prevNote,
+        );
+      });
+      return updatedNote;
+    });
+  }
+
   return (
-    <NotesContext.Provider value={{ items: notes, current, create, navigate }}>
+    <NotesContext.Provider
+      value={{ items: notes, current, create, update, navigate }}
+    >
       {children}
     </NotesContext.Provider>
   );

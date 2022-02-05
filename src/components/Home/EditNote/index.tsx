@@ -1,5 +1,6 @@
 import { useNotes } from '../../../hooks/useNotes';
 import { CreateNote } from '../CreateNote';
+import * as S from './styles';
 
 export function EditNote() {
   const notes = useNotes();
@@ -9,9 +10,18 @@ export function EditNote() {
     return <CreateNote />;
   }
 
+  console.log(current);
+
   return (
     <>
-      <h1>{notes.current?.title}</h1>
+      <S.TitleInput
+        type="text"
+        name="title"
+        onChange={(val) => {
+          notes.update({ ...current, title: val.target.value });
+        }}
+        value={current.title}
+      />
     </>
   );
 }

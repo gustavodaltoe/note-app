@@ -29,7 +29,7 @@ export const NewNoteButton = styled(NoteItem, {
   width: 'fit-content',
   borderRadius: '.4rem',
   padding: '0 2rem',
-  margin: 'auto',
+  margin: '1rem auto',
   background: '$secondary',
 });
 
