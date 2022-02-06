@@ -1,6 +1,6 @@
 import * as S from './styles';
 import { useNotes } from '../../hooks/useNotes';
-import { Scrollbar, ScrollThumb } from '../Scrollbar';
+import { Scrollbar } from '../Scrollbar';
 
 export function Sidebar() {
   const notes = useNotes();
@@ -29,9 +29,7 @@ export function Sidebar() {
           </S.NewNoteButton>
         </S.NoteList>
       </S.Content>
-      <Scrollbar orientation="vertical">
-        <ScrollThumb />
-      </Scrollbar>
+      <Scrollbar />
     </S.Wrapper>
   );
 }

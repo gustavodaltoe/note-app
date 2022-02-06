@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { useNotes } from '../../hooks/useNotes';
 import { CreateNote } from '../CreateNote';
+import { Scrollbar } from '../Scrollbar';
 import * as S from './styles';
 
 export function EditNote() {
@@ -35,19 +36,22 @@ export function EditNote() {
       <S.Header>
         <S.Title>{current.title}</S.Title>
       </S.Header>
-      <S.Content>
-        <S.TitleInput
-          ref={titleRef}
-          value={isNoteUntitled ? '' : current.title}
-          onChange={handleTitleChange}
-          placeholder={current.title}
-        />
-        <S.ContentInput
-          onChange={handleContentChange}
-          placeholder="Start typing..."
-          value={current.content}
-        />
-      </S.Content>
+      <S.ScrollContainer>
+        <S.Content>
+          <S.TitleInput
+            ref={titleRef}
+            value={isNoteUntitled ? '' : current.title}
+            onChange={handleTitleChange}
+            placeholder={current.title}
+          />
+          <S.ContentInput
+            onChange={handleContentChange}
+            placeholder="Start typing..."
+            value={current.content}
+          />
+        </S.Content>
+        <Scrollbar />
+      </S.ScrollContainer>
     </S.Wrapper>
   );
 }
