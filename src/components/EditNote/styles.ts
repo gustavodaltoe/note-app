@@ -40,4 +40,5 @@ export const TitleInput = styled(TextArea, {
 
 export const ContentInput = styled(TextArea, {
   flex: 1,
+  lineHeight: '2.4rem',
 });
