@@ -5,10 +5,10 @@ import * as S from './styles';
 export function EditNote() {
   const notes = useNotes();
   const { current } = notes;
-
   if (!current) {
     return <CreateNote />;
   }
+  const isNoteUntitled = current.title === 'Untitled';
 
   function handleTitleChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
     e.target.value = e.target.value.replace(/\n/g, '');
@@ -26,7 +26,11 @@ export function EditNote() {
         <S.Title>{current.title}</S.Title>
       </S.Header>
       <S.Content>
-        <S.TitleInput value={current.title} onChange={handleTitleChange} />
+        <S.TitleInput
+          value={isNoteUntitled ? '' : current.title}
+          onChange={handleTitleChange}
+          placeholder={current.title}
+        />
         <S.ContentInput
           onChange={handleContentChange}
           placeholder="Start typing..."
