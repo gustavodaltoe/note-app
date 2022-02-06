@@ -1,9 +1,18 @@
 import { styled } from '../../styles/stitches.config';
 import * as SeparatorPrimitive from '@radix-ui/react-separator';
+import * as ScrollAreaPrimitive from '@radix-ui/react-scroll-area';
 
-export const Wrapper = styled('div', {
+export const Wrapper = styled(ScrollAreaPrimitive.Root, {
   width: '30rem',
+  height: '100vh',
   borderRight: '1px solid $contrastPrimary',
+  overflow: 'hidden',
+});
+
+export const Content = styled(ScrollAreaPrimitive.Viewport, {
+  width: '100%',
+  height: '100%',
+  borderRadius: 'inherit',
 });
 
 export const Title = styled('h3', {
