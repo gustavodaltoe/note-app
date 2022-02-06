@@ -23,6 +23,11 @@ export const NoteItem = styled('button', {
   width: '100%',
   height: '4rem',
   background: 'transparent',
+  maxWidth: '26rem',
+  margin: 'auto',
+  textOverflow: 'ellipsis',
+  whiteSpace: 'nowrap',
+  overflow: 'hidden',
 });
 
 export const NewNoteButton = styled(NoteItem, {
