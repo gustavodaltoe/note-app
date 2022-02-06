@@ -1,4 +1,4 @@
-import { useNotes } from '../../../hooks/useNotes';
+import { useNotes } from '../../hooks/useNotes';
 import * as S from './styles';
 
 export function CreateNote() {

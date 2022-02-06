@@ -1,4 +1,4 @@
-import { useNotes } from '../../../hooks/useNotes';
+import { useNotes } from '../../hooks/useNotes';
 import { CreateNote } from '../CreateNote';
 import * as S from './styles';
 

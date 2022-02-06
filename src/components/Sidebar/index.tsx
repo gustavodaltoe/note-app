@@ -1,5 +1,5 @@
 import * as S from './styles';
-import { useNotes } from '../../../hooks/useNotes';
+import { useNotes } from '../../hooks/useNotes';
 
 export function Sidebar() {
   const notes = useNotes();

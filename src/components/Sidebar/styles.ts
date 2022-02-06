@@ -1,4 +1,4 @@
-import { styled } from '../../../styles/stitches.config';
+import { styled } from '../../styles/stitches.config';
 import * as SeparatorPrimitive from '@radix-ui/react-separator';
 
 export const Wrapper = styled('div', {

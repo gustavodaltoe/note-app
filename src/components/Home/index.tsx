@@ -1,6 +1,6 @@
 import * as S from './styles';
-import { Sidebar } from './Sidebar';
-import { EditNote } from './EditNote';
+import { Sidebar } from '../Sidebar';
+import { EditNote } from '../EditNote';
 
 export function Home() {
   return (
