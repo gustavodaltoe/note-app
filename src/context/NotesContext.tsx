@@ -20,6 +20,7 @@ export type NotesData = {
   create: () => Note;
   update: (note: Partial<Note>) => void;
   navigate: (id: string) => void;
+  deleteById: (id: string) => void;
 };
 export const NotesContext = createContext<NotesData>({} as NotesData);
 
@@ -65,9 +66,16 @@ export function NotesProvider({ children }: NotesProviderProps) {
     });
   }
 
+  function deleteById(id: string): void {
+    setNotes((prevNotes) => prevNotes.filter((note) => note.id !== id));
+    if (current?.id === id) {
+      setCurrent(undefined);
+    }
+  }
+
   return (
     <NotesContext.Provider
-      value={{ items: notes, current, create, update, navigate }}
+      value={{ items: notes, current, create, update, navigate, deleteById }}
     >
       {children}
     </NotesContext.Provider>
