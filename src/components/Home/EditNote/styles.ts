@@ -4,9 +4,26 @@ export const Wrapper = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   flex: 1,
+});
+
+export const Content = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  flex: 1,
   margin: '3rem auto',
   maxWidth: '80rem',
   width: '100%',
+});
+
+export const Header = styled('header', {
+  display: 'flex',
+  justifyContent: 'space-between',
+  padding: '1rem 2rem',
+});
+
+export const Title = styled('h4', {
+  fontSize: '1.8rem',
+  fontWeight: 'normal',
 });
 
 const TextArea = styled('textarea', {
