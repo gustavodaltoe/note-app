@@ -14,7 +14,7 @@ export const Header = styled('header', {
 export const Title = styled('h4', {
   fontSize: '1.8rem',
   fontWeight: 'normal',
-  maxWidth: '26rem',
+  maxWidth: '30rem',
   textOverflow: 'ellipsis',
   whiteSpace: 'nowrap',
   overflow: 'hidden',
