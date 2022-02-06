@@ -1,8 +1,7 @@
 import { styled } from '../../styles/stitches.config';
 import TextareaAutosize from 'react-textarea-autosize';
 import * as ScrollAreaPrimitive from '@radix-ui/react-scroll-area';
-
-const HEADER_HEIGHT = '4.2rem';
+import { EDIT_NOTE_HEADER_HEIGHT } from './Header/styles';
 
 export const Wrapper = styled('div', {
   display: 'flex',
@@ -10,15 +9,8 @@ export const Wrapper = styled('div', {
   flex: 1,
 });
 
-export const Header = styled('header', {
-  display: 'flex',
-  justifyContent: 'space-between',
-  padding: '1rem 2rem',
-  height: HEADER_HEIGHT,
-});
-
 export const ScrollContainer = styled(ScrollAreaPrimitive.Root, {
-  height: `calc(100vh - ${HEADER_HEIGHT})`,
+  height: `calc(100vh - ${EDIT_NOTE_HEADER_HEIGHT})`,
   overflow: 'hidden',
 });
 
@@ -29,15 +21,6 @@ export const Content = styled(ScrollAreaPrimitive.Viewport, {
   padding: '1rem 0 5rem',
   maxWidth: '80rem',
   height: '100%',
-});
-
-export const Title = styled('h4', {
-  fontSize: '1.8rem',
-  fontWeight: 'normal',
-  maxWidth: '26rem',
-  textOverflow: 'ellipsis',
-  whiteSpace: 'nowrap',
-  overflow: 'hidden',
 });
 
 const TextArea = styled(TextareaAutosize, {

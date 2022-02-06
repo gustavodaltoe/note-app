@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { useNotes } from '../../hooks/useNotes';
 import { CreateNote } from '../CreateNote';
 import { Scrollbar } from '../Scrollbar';
+import { Header } from './Header';
 import * as S from './styles';
 
 export function EditNote() {
@@ -33,9 +34,7 @@ export function EditNote() {
 
   return (
     <S.Wrapper>
-      <S.Header>
-        <S.Title>{current.title}</S.Title>
-      </S.Header>
+      <Header />
       <S.ScrollContainer>
         <S.Content>
           <S.TitleInput
