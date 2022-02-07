@@ -11,5 +11,6 @@ Challenge from [App Ideas](https://github.com/florinpop17/app-ideas/blob/master/
 
 ## Bonus features
 
--   [ ] User can create and edit a note in Markdown format. On save it will convert Markdown to HTML
--   [x] User can see the date when he created the note
+-   [x] User can create and edit a note in Markdown format.
+-   [x] User can see the note as html.
+-   [x] User can see the date when he created the note.
