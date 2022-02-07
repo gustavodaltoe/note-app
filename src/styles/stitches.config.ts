@@ -23,5 +23,7 @@ export const {
   utils: {
     marginX: (value: any) => ({ marginLeft: value, marginRight: value }),
     marginY: (value: any) => ({ marginTop: value, marginBottom: value }),
+    paddingX: (value: any) => ({ marginLeft: value, marginRight: value }),
+    paddingY: (value: any) => ({ marginTop: value, marginBottom: value }),
   },
 });

@@ -25,7 +25,6 @@ export const Content = styled(ScrollAreaPrimitive.Viewport, {
 
 const TextArea = styled(TextareaAutosize, {
   background: 'transparent',
-  marginTop: '2rem',
   fontSize: '1.6rem',
   width: '100%',
   height: '100%',
@@ -35,10 +34,52 @@ const TextArea = styled(TextareaAutosize, {
 export const TitleInput = styled(TextArea, {
   fontSize: '4rem',
   fontWeight: 'bolder',
-  marginTop: '8rem',
+  margin: '8rem 0 4rem',
 });
 
 export const ContentInput = styled(TextArea, {
   flex: 1,
   lineHeight: '2.4rem',
+});
+
+export const ContentAsHtml = styled('div', {
+  gap: '1rem',
+  display: 'grid',
+  gridTemplateColumns: '1fr',
+  '& :first-child': {
+    marginTop: 0,
+  },
+  'ul, ol': {
+    listStyle: 'revert',
+    paddingInlineStart: '18px',
+  },
+  'ul input': {
+    marginLeft: '-18px',
+  },
+  hr: {
+    border: 'revert',
+    borderColor: '$primaryContrast',
+  },
+  code: {
+    padding: '.5rem 1rem',
+    borderRadius: '.6rem',
+    background: '#333',
+    lineHeight: '3rem',
+  },
+  pre: {
+    display: 'flex',
+    code: {
+      width: '100%',
+      display: 'block',
+    },
+  },
+  h1: {
+    marginY: '2rem',
+  },
+  h2: {
+    marginY: '1.5rem',
+  },
+  h3: {
+    marginY: '1.2rem',
+  },
 });

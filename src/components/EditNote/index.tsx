@@ -3,6 +3,7 @@ import { useNotes } from '../../hooks/useNotes';
 import { CreateNote } from '../CreateNote';
 import { Scrollbar } from '../Scrollbar';
 import { Header } from './Header';
+import { marked } from 'marked';
 import * as S from './styles';
 
 export function EditNote() {
@@ -43,11 +44,20 @@ export function EditNote() {
             onChange={handleTitleChange}
             placeholder={current.title}
           />
-          <S.ContentInput
-            onChange={handleContentChange}
-            placeholder="Start typing..."
-            value={current.content}
-          />
+          {!notes.showAsHtml && (
+            <S.ContentInput
+              onChange={handleContentChange}
+              placeholder="Start typing..."
+              value={current.content}
+            />
+          )}
+          {notes.showAsHtml && (
+            <S.ContentAsHtml
+              dangerouslySetInnerHTML={{
+                __html: marked.parse(current.content),
+              }}
+            />
+          )}
         </S.Content>
         <Scrollbar />
       </S.ScrollContainer>

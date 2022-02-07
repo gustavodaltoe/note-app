@@ -2,6 +2,7 @@ import { DotsHorizontalIcon, TrashIcon } from '@radix-ui/react-icons';
 import { useNotes } from '../../../../hooks/useNotes';
 import dayjs from 'dayjs';
 import * as S from './styles';
+import { MenuButton } from '../styles';
 
 export function OptionsDropdown() {
   const notes = useNotes();
@@ -20,9 +21,9 @@ export function OptionsDropdown() {
   return (
     <S.DropdownMenu>
       <S.DropdownMenuTrigger asChild>
-        <S.DropdownMenuButton>
-          <DotsHorizontalIcon style={{ width: 22, height: 22 }} />
-        </S.DropdownMenuButton>
+        <MenuButton>
+          <DotsHorizontalIcon />
+        </MenuButton>
       </S.DropdownMenuTrigger>
       <S.DropdownMenuContent sideOffset={2} alignOffset={0}>
         <S.DropdownItem onClick={handleDelete}>
