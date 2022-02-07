@@ -1,5 +1,4 @@
 import { styled } from '../../../styles/stitches.config';
-import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
 
 export const EDIT_NOTE_HEADER_HEIGHT = '5rem';
 

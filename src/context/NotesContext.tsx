@@ -24,6 +24,8 @@ export type NotesData = {
 };
 export const NotesContext = createContext<NotesData>({} as NotesData);
 
+const UNTITLED_NOTE_TITLE = 'Untitled';
+
 export function NotesProvider({ children }: NotesProviderProps) {
   const [current, setCurrent] = useState<Note>();
   const [notes, setNotes] = usePersistedState<Note[]>('notes', []);
@@ -32,7 +34,7 @@ export function NotesProvider({ children }: NotesProviderProps) {
     const dateNow = new Date();
     const note: Note = {
       id: uuidv4(),
-      title: 'Untitled',
+      title: UNTITLED_NOTE_TITLE,
       content: '',
       createdAt: dateNow,
       updatedAt: dateNow,
@@ -50,6 +52,9 @@ export function NotesProvider({ children }: NotesProviderProps) {
 
   function update(note: Partial<Note>): void {
     const now = new Date();
+    if (!note.title?.trim().length) {
+      note.title = UNTITLED_NOTE_TITLE;
+    }
     setCurrent((prevCurrent) => {
       if (!prevCurrent) return;
       const updatedNote = {
