@@ -24,6 +24,18 @@ const itemStyles = {
 
 export const DropdownItem = styled(DropdownMenuPrimitive.Item, {
   ...itemStyles,
+  variants: {
+    info: {
+      true: {
+        cursor: 'default',
+        color: '#9f9f9f',
+        '&:hover': {
+          backgroundColor: 'transparent',
+          color: '#9f9f9f',
+        },
+      },
+    },
+  },
 });
 
 export const DropdownMenu = DropdownMenuPrimitive.Root;
@@ -48,4 +60,9 @@ export const DropdownMenuContent = styled(DropdownMenuPrimitive.Content, {
   padding: 5,
   boxShadow:
     '0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)',
+});
+export const DropdownMenuSeparator = styled(DropdownMenuPrimitive.Separator, {
+  height: 1,
+  backgroundColor: '$primary',
+  margin: 5,
 });
